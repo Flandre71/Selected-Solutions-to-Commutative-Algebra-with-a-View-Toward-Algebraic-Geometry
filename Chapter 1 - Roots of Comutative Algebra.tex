@@ -278,4 +278,70 @@
 	\qed
 \end{exercise}
 
+\begin{exercise}
+	\leavevmode \vspace{-\baselineskip}
+	\begin{enumerate}[label=({\alph*})]
+		\item 
+			\begin{enumerate}[label=({\roman*})]
+				\item For any polynomial $p\in k[x,y],\mathrm{s.t.}\ $, we have
+					$$
+					\mathrm{deg}_{x}p+\mathrm{deg}_{y}p\equiv 0(\mathrm{mod}2)
+					$$
+					Therefore we can represent $p$ by $x^2,y^2,xy$.
+					Since $p$ is chosen arbitarily,
+					$$
+					\text{ring of invariants}\subseteq k[x^2,xy,y^2]
+					$$
+					Also, from $x^2,xy,y^2$ being invariant under $g$, we know 
+					$$
+					k[x^2,xy,y^2]\subseteq \text{ring of invariants}
+					$$
+					So the ring of invariants is $k[x^2,xy,y^2]$.
+				\item Consider ring homomorphism
+					$$
+					\varphi:k[u,v,w]\longrightarrow k[x^2,xy,y^2]
+					$$
+					where
+					\begin{align*}
+						u\longmapsto x^2\\
+						v\longmapsto xy\\
+						w\longmapsto y^2
+					\end{align*}
+					Notice $\ker \varphi=(uw-v^2)$, so the proof can be obtained from \emph{First Ring Isomorphism Theorem}.
+				\item $g$ acts by sending $x,y$ to $-x,-y$ respectively.
+					Thus, for any plane $p$ on the corresponding affine $2$-space $\mathbb{A}^2$, it must be affected by the operation $g$, ending up not being identity.
+			\end{enumerate}
+		\item 
+			$G$ acts by $g(x_{i})=\alpha_{i}(g)x_{i}$ for $\forall g\in G,\forall i\in [1,r]\cap \mathbb{Z}$.
+			% The invariants of $G$ is the invariants for all those $g\in G$, so we may check the invariants for a specific $g\in G$ first.
+
+			For any monomial $p\in k[x_1,\ldots ,x_{r}]^{G}$, let
+			$$
+			p=x_1^{a_1}\ldots x_{r}^{a{r}}
+			$$
+			Since for $\forall g\in G$, $g(p)=p$, we have
+			$$
+			\left( \alpha_1(g)^{a_1}\ldots \alpha_{r}(g)^{a_{r}} \right) 
+x_1^{a_1}\ldots x_{r}^{a_{r}}
+			=x_1^{a_1}\ldots x_{r}^{a_{r}}
+			$$
+			and we get
+			$$
+			\alpha_1(g)^{a_1}\ldots \alpha_{r}(g)^{a_{r}} =1
+			$$
+			In this way we obtain a homomorphism
+			\begin{align*}
+				\varphi_{g}:\mathbb{Z}^{r}&\longrightarrow k^{\times }\\
+				(a_1,\ldots ,a_{r})&\longmapsto \alpha_1(g)^{a_1}\ldots \alpha_{r}(g)^{a_{r}}
+			\end{align*}
+			whose kernel is the invariants under $g$.
+			Ultimately, the desired invariants undre $G$ can be derived from
+			$$
+			\bigcap_{g \in G} \ker \varphi_{g}
+			$$
+	\emph{(I am wondering where was the condition $\left| G \right|<\infty $ used.)}
+	\end{enumerate}
+	\qed
+\end{exercise}
+
 \end{document}
